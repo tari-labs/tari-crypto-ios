@@ -10,7 +10,7 @@
 		A02E84E92620271100B42402 /* TariCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02E84DF2620271100B42402 /* TariCrypto.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A02E84EE2620271100B42402 /* TariCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E84ED2620271100B42402 /* TariCryptoTests.swift */; };
 		A02E84F02620271100B42402 /* TariCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = A02E84E22620271100B42402 /* TariCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A06568F2262027C6004E40AE /* libtari_crypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A06568F1262027C6004E40AE /* libtari_crypto.a */; };
+		A06568F2262027C6004E40AE /* libtari_crypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A06568F1262027C6004E40AE /* libtari_crypto.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		A06568F926202921004E40AE /* TariCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06568F826202921004E40AE /* TariCrypto.swift */; };
 		A0D224F526203CF200C4AE9F /* tari_crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = A06568F4262027E0004E40AE /* tari_crypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0D2250A2620435900C4AE9F /* TariKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D225092620435900C4AE9F /* TariKey.swift */; };
@@ -420,7 +420,7 @@
 				INFOPLIST_FILE = TariCrypto/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +461,7 @@
 				INFOPLIST_FILE = TariCrypto/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
