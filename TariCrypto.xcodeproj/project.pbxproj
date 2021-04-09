@@ -422,6 +422,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TariCrypto/TariLib",
 				);
+				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tari.TariCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -455,6 +456,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TariCrypto/TariLib",
 				);
+				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tari.TariCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
