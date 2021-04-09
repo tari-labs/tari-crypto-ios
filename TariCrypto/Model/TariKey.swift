@@ -40,7 +40,7 @@ public struct TariKey: CustomStringConvertible {
  
     public let bytes: ByteArray
     
-    init() {
+    public init() {
         self.bytes = (
             UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
             UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0), UInt8(0),
