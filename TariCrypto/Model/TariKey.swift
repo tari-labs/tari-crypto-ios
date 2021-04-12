@@ -53,6 +53,14 @@ public struct TariKey: CustomStringConvertible {
         self.bytes = bytes
     }
     
+    public init?(hexString: String) {
+        if let bytes = hexStringToBytes(hexString: hexString) {
+            self.bytes = bytes
+        } else {
+            return nil
+        }
+    }
+    
     public func signMessage(message: String) throws -> TariSignedMessage {
         // FFI interface needs to change, this can be done cleaner
         // (C arrays are imported in swift as arrays of tuples, not values)

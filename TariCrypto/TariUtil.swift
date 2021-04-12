@@ -51,3 +51,25 @@ func bytesToHexString(bytes: ByteArray) -> String {
         + String(format: "%02X", bytes.28) + String(format: "%02X", bytes.29)
         + String(format: "%02X", bytes.30) + String(format: "%02X", bytes.31)
 }
+
+
+func hexStringToBytes(hexString: String) -> ByteArray? {
+    let stringArray = Array(hexString)
+    var data: Data = Data()
+    for i in stride(from: 0, to: hexString.count, by: 2) {
+        let pair: String = String(stringArray[i]) + String(stringArray[i+1])
+        if let byteNum = UInt8(pair, radix: 16) {
+            let byte = Data([byteNum])
+            data.append(byte)
+        }
+        else{
+            return nil
+        }
+    }
+    return (
+        data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7],
+        data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15],
+        data[16], data[17], data[18], data[19], data[20], data[21], data[22], data[23],
+        data[24], data[25], data[26], data[27], data[28], data[29], data[30], data[31]
+    )
+}

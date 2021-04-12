@@ -20,7 +20,7 @@ Please visit the [GitHub repository](https://github.com/tari-labs/tari-crypto-io
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  spec.source = { :git => "https://github.com/tari-labs/tari-crypto-ios.git", :tag => "v#{spec.version}" }
+  spec.source = { :git => "https://github.com/tari-labs/tari-crypto-ios.git", :tag => "#{spec.version}" }
   spec.source_files = "TariCrypto/**/*.{h,swift}"
   spec.ios.vendored_library = 'TariCrypto/TariLib/libtari_crypto.a'
 

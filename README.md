@@ -24,7 +24,35 @@ end
 
 ## Usage
 
-Please view [TariCryptoTests.swift](TariCryptoTests/TariCryptoTests.swift) for usage examples.
+Sample program that illustrates message signing and verification:
+
+```swift
+import TariCrypto
+
+// create a key pair from hex string representations, and sign & verify
+let keyPairFromHex = TariKeyPair(
+    privateKey: TariKey(hexString: "A35F68A5054C9721874CDE2553B80F98338952783C6E1687A2E8454B0D5BA200")!,
+    publicKey: TariKey(hexString: "50C5624924CE9B806FE40A94CA20B029DB6AC6DA098B3E48B89CE2695B265E71")!
+)
+let message = "A random message."
+let signedMessage = try keyPairFromHex.privateKey.signMessage(message: message)
+var isVerified = try keyPairFromHex.publicKey.verifySignature(signedMessage: signedMessage)
+print("Is first message verified? \(isVerified)")
+
+// or, do the same with a random key pair, and sign & verify
+let randomKeyPair = TariKeyPair.generateRandom()
+let anotherMessage = "Another random message."
+let anotherSignedMessage = try randomKeyPair.privateKey.signMessage(message: anotherMessage)
+isVerified = try randomKeyPair.publicKey.verifySignature(signedMessage: anotherSignedMessage)
+print("Is second message verified? \(isVerified)")
+```
+
+Program output:
+
+```
+Is first message verified? true
+Is second message verified? true
+```
 
 ## Testing
 

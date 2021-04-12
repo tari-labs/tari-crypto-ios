@@ -44,6 +44,12 @@ class TariCryptoTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    func testKeyFromHex() {
+        let keyPair = TariKeyPair.generateRandom()
+        let publicKeyFromHexString = "\(keyPair.publicKey)"
+        XCTAssertEqual("\(keyPair.publicKey)", "\(publicKeyFromHexString)")
+    }
+    
     func testSignatureVerification() throws {
         let message = "A random message."
         let keyPair = TariKeyPair.generateRandom()
@@ -51,6 +57,10 @@ class TariCryptoTests: XCTestCase {
         let signedMessage = try keyPair.privateKey.signMessage(message: message)
         print("Signed message: \(signedMessage)")
         XCTAssertTrue(try keyPair.publicKey.verifySignature(signedMessage: signedMessage))
+        // also try to verify with hex-generated public key
+        let publicKeyFromHex = TariKey(hexString: "\(keyPair.publicKey)")
+        XCTAssertNotNil(publicKeyFromHex)
+        XCTAssertTrue(try publicKeyFromHex?.verifySignature(signedMessage: signedMessage) ?? false)
     }
 
     func testSignatureFailure() throws {
@@ -69,12 +79,13 @@ class TariCryptoTests: XCTestCase {
         XCTAssertFalse(try keyPair.publicKey.verifySignature(signedMessage: signedMessage))
     }
     
+    /*
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
-    
+    */
 
 }
